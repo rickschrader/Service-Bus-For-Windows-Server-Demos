@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublisherService", "WASHostedServiceBus\PublisherService.csproj", "{3B1E6891-7559-499B-8E11-077914E0D787}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublisherService.Host", "PublisherService\PublisherService.Host.csproj", "{9CCF93A2-04C4-4894-A13D-655CC17E0F62}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{48D74C56-35B9-485A-9307-8FBEA55BB345}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{89E42157-BA80-4B25-8421-FA44B20D735E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9CCF93A2-04C4-4894-A13D-655CC17E0F62} = {9CCF93A2-04C4-4894-A13D-655CC17E0F62}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://cltprtfsapp1:8080/
+		SccProjectUniqueName0 = PublisherService\\PublisherService.Host.csproj
+		SccProjectName0 = PublisherService
+		SccLocalPath0 = PublisherService
+		SccProjectUniqueName1 = WASHostedServiceBus\\PublisherService.csproj
+		SccProjectName1 = WASHostedServiceBus
+		SccLocalPath1 = WASHostedServiceBus
+		SccLocalPath2 = .
+		SccProjectUniqueName3 = TestApp\\TestApp.csproj
+		SccProjectName3 = TestApp
+		SccLocalPath3 = TestApp
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B1E6891-7559-499B-8E11-077914E0D787}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B1E6891-7559-499B-8E11-077914E0D787}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B1E6891-7559-499B-8E11-077914E0D787}.Debug|x64.ActiveCfg = Debug|x64
+		{3B1E6891-7559-499B-8E11-077914E0D787}.Debug|x64.Build.0 = Debug|x64
+		{3B1E6891-7559-499B-8E11-077914E0D787}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B1E6891-7559-499B-8E11-077914E0D787}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B1E6891-7559-499B-8E11-077914E0D787}.Release|x64.ActiveCfg = Release|x64
+		{3B1E6891-7559-499B-8E11-077914E0D787}.Release|x64.Build.0 = Release|x64
+		{9CCF93A2-04C4-4894-A13D-655CC17E0F62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CCF93A2-04C4-4894-A13D-655CC17E0F62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CCF93A2-04C4-4894-A13D-655CC17E0F62}.Debug|x64.ActiveCfg = Debug|x64
+		{9CCF93A2-04C4-4894-A13D-655CC17E0F62}.Debug|x64.Build.0 = Debug|x64
+		{9CCF93A2-04C4-4894-A13D-655CC17E0F62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CCF93A2-04C4-4894-A13D-655CC17E0F62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CCF93A2-04C4-4894-A13D-655CC17E0F62}.Release|x64.ActiveCfg = Release|x64
+		{9CCF93A2-04C4-4894-A13D-655CC17E0F62}.Release|x64.Build.0 = Release|x64
+		{89E42157-BA80-4B25-8421-FA44B20D735E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89E42157-BA80-4B25-8421-FA44B20D735E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89E42157-BA80-4B25-8421-FA44B20D735E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{89E42157-BA80-4B25-8421-FA44B20D735E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89E42157-BA80-4B25-8421-FA44B20D735E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89E42157-BA80-4B25-8421-FA44B20D735E}.Release|x64.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

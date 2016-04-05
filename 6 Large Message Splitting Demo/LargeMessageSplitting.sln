@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageSubscriber1", "Subscriber1\ImageSubscriber1.csproj", "{AB6DD8D4-765D-4399-B6D4-897256F08F8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImagePublisher", "Publisher\ImagePublisher.csproj", "{F523CF46-6C52-46E7-828C-D57332BC2033}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LargeMessageHelper", "LargeMessageHelper\LargeMessageHelper.csproj", "{E7C106C3-E3ED-4FB3-9722-A7840119313D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilePublisher", "FilePublisher\FilePublisher.csproj", "{20984D87-0720-4437-8100-1436D96BE2BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSubscriber1", "FileSubscriber1\FileSubscriber1.csproj", "{7DC33F08-E934-4C55-AAAF-D1DA47D6E87B}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://cltprtfsapp1:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Subscriber1\\ImageSubscriber1.csproj
+		SccProjectName1 = Subscriber1
+		SccLocalPath1 = Subscriber1
+		SccProjectUniqueName2 = Publisher\\ImagePublisher.csproj
+		SccProjectName2 = Publisher
+		SccLocalPath2 = Publisher
+		SccProjectUniqueName3 = LargeMessageHelper\\LargeMessageHelper.csproj
+		SccProjectName3 = LargeMessageHelper
+		SccLocalPath3 = LargeMessageHelper
+		SccProjectUniqueName4 = FilePublisher\\FilePublisher.csproj
+		SccProjectName4 = FilePublisher
+		SccLocalPath4 = FilePublisher
+		SccProjectUniqueName5 = FileSubscriber1\\FileSubscriber1.csproj
+		SccProjectName5 = FileSubscriber1
+		SccLocalPath5 = FileSubscriber1
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB6DD8D4-765D-4399-B6D4-897256F08F8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB6DD8D4-765D-4399-B6D4-897256F08F8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB6DD8D4-765D-4399-B6D4-897256F08F8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB6DD8D4-765D-4399-B6D4-897256F08F8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F523CF46-6C52-46E7-828C-D57332BC2033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F523CF46-6C52-46E7-828C-D57332BC2033}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F523CF46-6C52-46E7-828C-D57332BC2033}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F523CF46-6C52-46E7-828C-D57332BC2033}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7C106C3-E3ED-4FB3-9722-A7840119313D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7C106C3-E3ED-4FB3-9722-A7840119313D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7C106C3-E3ED-4FB3-9722-A7840119313D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7C106C3-E3ED-4FB3-9722-A7840119313D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20984D87-0720-4437-8100-1436D96BE2BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20984D87-0720-4437-8100-1436D96BE2BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20984D87-0720-4437-8100-1436D96BE2BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20984D87-0720-4437-8100-1436D96BE2BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DC33F08-E934-4C55-AAAF-D1DA47D6E87B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DC33F08-E934-4C55-AAAF-D1DA47D6E87B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DC33F08-E934-4C55-AAAF-D1DA47D6E87B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DC33F08-E934-4C55-AAAF-D1DA47D6E87B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

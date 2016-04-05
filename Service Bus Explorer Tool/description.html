@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/epxheader.2.css" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/epxfooter.2.css" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Service Bus Explorer</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/2fc10229-8275-4f68-a8ad-e48406254614Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Service Bus Explorer</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Azure, Windows, Service Bus
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Unit Testing, Performance testing, Administration Tool
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">1/8/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p><strong>Author: </strong>Paolo Salvatori</p>
+<h1>Introduction</h1>
+<p>Queues and topics represent the foundation of a new cloud-based messaging and integration infrastructure that provides reliable message queuing and durable publish/subscribe messaging capabilities to both cloud and on-premises applications based on Microsoft
+ and non-Microsoft technologies. .NET applications can use the new functionality offered by queues and topics by using the new messaging API (<a href="http://msdn.microsoft.com/en-us/library/microsoft.servicebus.messaging.aspx">Microsoft.ServiceBus.Messaging</a>)
+ or via WCF by using the new <a href="http://msdn.microsoft.com/en-us/library/microsoft.servicebus.messaging.netmessagingbinding.aspx">
+NetMessagingBinding</a>. Likewise, any Microsoft or non-Microsoft applications can use a
+<a href="http://msdn.microsoft.com/en-us/library/hh367521.aspx">Service Bus REST API</a> to manage and access messaging entities over HTTPS. In November 2012, the&nbsp;<a href="http://msdn.microsoft.com/en-us/library/jj193022(v=azure.10).aspx">Service Bus for
+ Windows Server</a> was released. The Service Bus Exploer can be used with manage namespaces hosted by both Windows Azure Service Bus and Service Bus for Windows Server.</p>
+<p>Queues and topics were first introduced by the Community Technology Preview (CTP) of Windows Azure that was released in May 2011. At that time, the
+<a href="http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/https://windows.azure.com/default.aspx">Windows Azure Management Portal</a> didn&rsquo;t provide any user interface to administer, create and delete messaging entities and the only way to accomplish this task was using the .NET or REST API. For this
+ reason, In June 2011 I decided to build a tool called <a href="http://windowsazurecat.com/2011/07/exploring-topics-and-queues-by-building-a-service-bus-explorer-toolpart-1/">
+Service Bus Explorer</a> that would allow developers and system administrators to connect to a Service Bus namespace and administer its messaging entities.</p>
+<p style="text-align:center">&nbsp;</p>
+<p><img id="72776" src="description/ServiceBusExplorer.png" alt="" width="620" height="386"></p>
+<p>During the last few months I continued to develop this tool and add new features with the intended goal to facilitate the development and administration of new Service Bus-enabled applications. In the meantime, the
+<a href="http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/https://windows.azure.com/default.aspx">Windows Azure Management Portal</a> introduced the ability for a user to create, disable, update&nbsp;queues, topics, and subscriptions and define their properties, but not to define or display rules for an existing
+ subscription. Besides, the Service Bus Explorer enables to accomplish functionalities, such as importing, exporting and testing entities, that are not currently provided by the
+<a href="http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/https://windows.azure.com/default.aspx">Windows Azure Management Portal</a>. For this reason, the Service Bus Explorer tool represents the perfect companion for the official Azure portal and it can also be used to explore the features (session-based
+ correlation, configurable detection of duplicate messages, deferring messages, etc.) provided out-of-the-box by the Service Bus brokered messaging.</p>
+<p>For more information on the Service Bus, you can use the following resources:</p>
+<ul>
+<li>&quot;<a href="http://msdn.microsoft.com/en-us/library/ee732537.aspx">Windows Azure Service Bus</a>&quot; section on the MSDN site.
+</li><li>&quot;<a href="http://msdn.microsoft.com/en-us/library/jj193022(v=azure.10).aspx">Service Bus for Windows Server</a>&quot; section on the MSDN site.
+</li><li>&ldquo;<a href="http://msdn.microsoft.com/en-us/library/ee732537.aspx">Service Bus</a>&rdquo; topic on the MSDN site.
+</li><li>&ldquo;<a href="http://blogs.msdn.com/b/windowsazure/archive/2011/09/16/the-service-bus-september-2011-release.aspx">Now Available: The Service Bus September 2011 Release</a>&rdquo; article on the Windows Azure Blog.
+</li><li>&ldquo;<a href="http://msdn.microsoft.com/en-us/library/windowsazure/hh367516.aspx">Queues, Topics, and Subscriptions</a>&rdquo; article on the MSDN site.
+</li><li>&ldquo;<a href="http://blogs.msdn.com/b/clemensv/archive/2011/06/10/understanding-windows-azure-appfabric-queues-and-topics.aspx">Understanding Windows Azure Queues (and Topics)</a>&rdquo; video on the Clemens Vasters Blog.
+</li><li>&ldquo;<a href="http://channel9.msdn.com/Events/BUILD/BUILD2011/SAC-862T">Building loosely-coupled apps with Windows Azure Service Bus Topics and Queues</a>&rdquo; video on the channel9 site.
+</li><li>&ldquo;<a href="http://channel9.msdn.com/posts/ServiceBusTopicsAndQueues">Service Bus Topics And Queues</a>&rdquo; video on the channel9 site.
+</li><li>&ldquo;<a href="http://channel9.msdn.com/posts/Securing-Service-Bus-with-ACS">Securing Service Bus with ACS</a>&rdquo; video on the channel9 site.
+</li></ul>
+<h1>Windows Azure Management Portal</h1>
+<p>In order to use the Brokered and Relay messaging functionality provided by the Service Bus, the first operation to perform is to provision a new Service Bus namespace or modify an existing namespace to include the Service Bus. You can accomplish this task
+ from the <a href="http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/https://windows.azure.com/default.aspx">Windows Azure Management Portal</a>.</p>
+<p><a href="http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/file:///C:/Users/paolos/AppData/Local/Temp/1/WindowsLiveWriter393614076/supfiles18B3FF56/CreateNamespace4.jpg"></a></p>
+<p>Once completed this step, you can start creating and using queues, topics and subscriptions. You have many options to provision and manage messaging entities:</p>
+<ul>
+<li>This first option is to exploit the <a href="http://msdn.microsoft.com/en-us/library/hh293157.aspx">
+CreateQueue</a>, <a href="http://msdn.microsoft.com/en-us/library/hh330826.aspx">
+CreateTopic</a> and <a href="http://msdn.microsoft.com/en-us/library/hh330855.aspx">
+CreateSubscription</a> methods exposed by the <a href="http://msdn.microsoft.com/en-us/library/microsoft.servicebus.namespacemanager.aspx">
+NamespaceManager</a> class that can be used to manage entities, such as queues, topics, subscriptions, and rules, in your service namespace. This is exactly the approach that I followed to build the provisioning functionality exposed by the Service Bus Explorer
+ tool. </li><li>The second approach is to rely on the <a href="http://msdn.microsoft.com/en-us/library/hh367521.aspx">
+Service Bus REST API</a> to create and delete messaging entities. By using REST, you can write applications in any language that supports HTTP requests, without the need for a client SDK. In particular, this allows applications based on non-Microsoft technologies
+ (e.g. Java, Ruby, etc.) not only to send and receive messages from the Service Bus, but also to create or delete queues, topics and subscription in a given namespace.
+</li><li>Finally, you can administer messaging entities from the user interface supplied by the
+<a href="http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/https://windows.azure.com/default.aspx">Windows Azure Management Portal</a>. In particular, the buttons in the
+<strong>Manage Entities </strong>command bar highlighted in red at point 1 in the figure below allow creating a new queue, topic and subscription entity. Then you can use the navigation tree-view shown at point 2 to select an existing entity and display its
+ properties in the vertical bar highlighted at point 3. To remove the selected entity, you press the
+<strong>Delete</strong> button in the <strong>Manage Entities</strong> command bar.
+</li></ul>
+<p><a href="http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/file:///C:/Users/paolos/AppData/Local/Temp/1/WindowsLiveWriter393614076/supfiles18B3FF56/ManagementPortalProvisioning9.jpg"></a></p>
+<p>Using <a href="http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/https://windows.azure.com/default.aspx">Windows Azure Management Portal</a> is a handy and convenient manner to handle the messaging entities in a given Service Bus namespace. However, at least at the moment, the set of operations that a developer
+ or a system administrator can perform using its user interface is quite limited. For example, the
+<a href="http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/https://windows.azure.com/default.aspx">Windows Azure Management Portal</a> actually allows a user to create queues, topics, and subscriptions and define their properties, but not to create or display rules for an existing subscription. At the moment,
+ you can accomplish this task only by using the <a href="http://msdn.microsoft.com/en-us/library/microsoft.servicebus.messaging.aspx">
+.NET Messaging API</a>. In particular, to add a new rule to an existing subscription you can use the
+<a href="http://msdn.microsoft.com/en-us/library/hh429499.aspx">AddRule(String, Filter)</a> or the
+<a href="http://msdn.microsoft.com/en-us/library/hh330813.aspx">AddRule(RuleDescription)</a> methods exposed by the
+<a href="http://msdn.microsoft.com/en-us/library/microsoft.servicebus.messaging.subscriptionclient.aspx">
+SubscriptionClient</a> class, while to enumerate the rules of an existing subscription, you can use the
+<a href="http://msdn.microsoft.com/en-us/library/microsoft.servicebus.namespacemanager.getrules.aspx">
+GetRules</a> method of the <a href="http://msdn.microsoft.com/en-us/library/microsoft.servicebus.namespacemanager.aspx">
+NamespaceManager</a> class. Besides, the <a href="http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/https://windows.azure.com/default.aspx">
+Windows Azure Management Portal</a> actually does not provide the ability to perform the following operations:</p>
+<ul>
+<li>Properly visualize entities in a hierarchical manner. Actually, the <a href="http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/https://windows.azure.com/default.aspx">
+Windows Azure Management Portal</a> displays queues, topics and subscriptions with a flat treeview. However, you can organize messaging entities in a hierarchical structure simply by specifying their name as an absolute path composed of multiple path segments,
+ for example crm/prod/queues/orderqueue. </li><li>Export the messaging entities contained in a given Service Bus namespace to an XML binding file (a-la BizTalk Server). Instead, the Service Bus Explorer tool provides the ability to select and export
+<ul>
+<li>Individual entities. </li><li>Entities by type (queues or topics). </li><li>Entities contained in a certain path (e.g. crm/prod/queues). </li><li>All the entities in a given namespace. </li></ul>
+</li><li>Import queues, topics and subscriptions from an XML file to an existing namespace. The Service Bus Explorer supports the ability to export entities to an XML file and reimport them on the same or another Service Bus namespace. This feature comes in a handy
+ to perform a backup and restore of a namespace or simply to transfer queues and topics from a testing to a production namespace.
+</li></ul>
+<p>That&rsquo;s why in June, I created a tool called <a href="http://windowsazurecat.com/2011/07/exploring-topics-and-queues-by-building-a-service-bus-explorer-toolpart-1/">
+Service Bus Explorer</a> that allows a user to create, delete and test queues, topics, subscriptions, and rules. My tool was able to manage entities in the
+<a href="http://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a/https://portal.appfabriclabs.com/Default.aspx">Labs Beta environment</a>. However, the new version of the
+<a href="http://msdn.microsoft.com/en-us/library/hh394905.aspx">Service Bus API</a> introduced some breaking changes, as you can read
+<a href="http://rickgaribay.net/archive/2011/09/14/azure-appfabric-service-bus-brokered-messaging-ga-amp-rude-ctp.aspx">
+here</a>, so I built a new version of the Service Bus Explorer tool that introduces a significant amount of new features.</p>
+<h1>Service Bus Explorer</h1>
+<p>The following picture illustrates the high-level architecture of the Service Bus Explorer tool. The application has been written in C# using
+<a href="http://www.microsoft.com/visualstudio/en-us">Visual Studio 2010</a> and requires the installation of the .<a href="http://www.microsoft.com/download/en/details.aspx?id=17718">NET Framework 4.0</a> and
+<a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=27421">
+</a><a title="Windows Azure SDK for .NET" href="http://www.microsoft.com/download/en/details.aspx?id=28045">Windows Azure SDK for .NET</a>. The tool can be copied and used on any workstation that satisfies the prerequisites mentioned above to manage and test
+ the Brokered and Relay messaging services defined in a given Service Bus namespace.</p>
+<p style="text-align:center">&nbsp;</p>
+<p><img src="description/ServiceBusExplorer.jpg" alt="" width="403" height="388" style="display:block; margin-left:auto; margin-right:auto">Read the full article on
+<a title="MSDN" href="http://msdn.microsoft.com/en-us/library/hh532261(v=VS.103).aspx" >
+MSDN</a>.</p>
+<p><strong>NOTE</strong>: I'll continue to develop the tool and add new functionalities. So I strongly recommend you to visit this page from time to time for a new version.</p>
+<p><strong>Author: </strong>Paolo Salvatori</p>
+<p><strong>Update</strong>: 28 August 2012</p>
+<p>This version introduces the following updates:</p>
+<ul>
+<li>A new flat UI. This change has been done primarily to match Windows 8 and Windows Server 2012 new UI style.
+</li><li>Two new options in the configuration file and Options form that allow to save respectively the message text and user-defined properties of a BrokeredMessage between 2 runs. This way, you don't have to re-enter user-defined properties when you start a new
+ session. </li><li>The possibility to define the body of BrokeredMessage as a stream. Now in the Sender tab of a queue and topic you can select 3 different formats for the payload: string, stream and WCF message.
+</li></ul>
+<p><strong>Update</strong>: 18&nbsp;December 2012</p>
+<p>This version introduces the following updates:</p>
+<ul>
+<li>Implemented Disable/Enable operations for queues and topics. </li></ul>
+<p><img id="73360" src="description/DisableEntity.png" alt="" width="385" height="599" style="margin-right:auto; margin-left:auto; display:block"></p>
+<p>&nbsp;</p>
+<ul>
+<li>Implemented Update operation for queues, topics and subscriptions. </li><li>Added OData filter support for queues, topics and subscriptions in the ConnectForm.
+</li><li>Added OData filter support on context menu of queues, topics and subscriptions.
+</li><li>Added FilterForm that allows to compose a valid OData filter both as free-text or using the UI. The 2 mechanisms are synchronized.
+</li></ul>
+<p><img id="72778" src="description/FilterForm.png" alt="" width="459" height="562" style="margin-right:auto; margin-left:auto; display:block"></p>
+<p>&nbsp;</p>
+<ul>
+<li>Added support for Windows Azure Service Bus connection strings in the Connect Form.
+</li></ul>
+<p><img id="72779" src="description/ConnectionString.png" alt="" width="469" height="668" style="margin-right:auto; margin-left:auto; display:block"></p>
+<p>&nbsp;</p>
+<ul>
+<li>Added support for Service Bus for Windows Server and Windows Azure Service Bus connection strings in the configuration file.
+</li><li>Added support for F5 shortcut to refresh current entity/entities </li><li>Added connection string textbox in the Connect form. </li><li>Added tooltip with samples for cloud &amp; server connection strings in the Connect form.
+</li><li>Added checkbox for IsAnonymousAccessible property to topic and queue management control.
+</li><li>Added checkbox for EnableFilteringMessagesBeforePublishing property to topic management control.
+</li><li>Added TextBox for UserMetadata property to queue, topic and subscription management control.
+</li><li>Added TextBox for ForwardTo property to queue and subscription management control.
+</li><li>Added visualization of IsReadOnly property to queue, topic and subscription management control.
+</li><li>Added ForwardToForm to select a target queue or topic from a treeview as value for the ForwardTo property.
+</li></ul>
+<p><img id="73361" src="description/ForwardForm.png" alt="" width="562" height="563" style="margin-right:auto; margin-left:auto; display:block"></p>
+<p>&nbsp;</p>
+<ul>
+<li>Added support for SendBatch to the Sender tab of queue/topic test controls. </li><li>Added support for ReceiveBatch to the Receiver tab of queue/topic/subscription test controls.
+</li><li>Added support for Get Message Sessions to queue and subscription context menus for session-aware queues and subscriptions.
+</li></ul>
+<p><img id="73362" src="description/GetMessageSessions.png" alt="" width="376" height="705" style="margin-right:auto; margin-left:auto; display:block"></p>
+<p>&nbsp;</p>
+<ul>
+<li>Replaced the absolute Uri of a target queue or topic with the value of the Path property (queues) and name property (subscriptions) when loading the value of the ForwardTo property.
+</li><li>Added ListView for entity information (AccessedAt, UpdatedAt, Status, MessageCountDetail, etc.) to queue, topic and subscription management control.
+</li><li>Added User Meyadata fields. </li><li>Replaced TextBox with TrackBar for Maximum Size of Queues and Topics. </li><li>Differentiated possible and maximum values for max size of messaging entities for cloud and on-premises Service Bus namespaces.
+</li><li>Fixed Refresh operation for Subscriptions and Rules nodes. </li><li>Changed the style of DataGridViews in all controls. </li><li>Changed the style of ListViews in all controls.<br>
+Adjusted the width of the last column of DataGridViews and ListViews based on control width and vertical scroll bar visibility.
+</li><li>The main panel is cleared when connecting to a new namespace. </li><li>Fixed minor issues in the Rule control. </li><li>Significantly improved the performance of graph drawing. </li><li>Significantly improved the performance of logging. </li><li>Fixed problems with graphs when stopping load test. </li><li>Fixed problems with graphs when using PrefetchCount &gt; 0 </li><li>Hidden the Relay Services node for Service Bus for Windows Server namespaces.
+</li><li>Hidden the Is Anonymous Accessible settings for cloud Service Bus namespaces.
+</li><li>The ConnectForm remembers the last connectionstring opened. </li><li>Improved the visualization of the namespace treeview. </li><li>Change icon of the namespace treeview. </li><li>Changed the About form. </li><li>Changed the Windows Azure Logo. </li></ul>
+<p><strong>Update</strong>:&nbsp;7&nbsp;January 2013</p>
+<p>This version introduces the following updates:</p>
+<ul>
+<li>Fixed&nbsp;Copy &lt;Queue|Topic|Subscription&gt;&nbsp;URL and Copy Deadletter Queue URL for Service Bus for Windows Server namespaces.
+</li></ul>
+<p><strong>Update</strong>:&nbsp;8&nbsp;January 2013</p>
+<p>This version introduces the following updates:</p>
+<ul>
+<li>Fixed the address&nbsp;format&nbsp;of the&nbsp;To header when sending WCF messages to queues and topics of a Service Bus for Windows Server namespace.
+</li></ul>
+<p>&nbsp;</p>
+
+</div>
+
+
+    </div>
+</body>
+</html>
